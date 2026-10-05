@@ -23,9 +23,14 @@ const HomeScreen = ({ navigation }) => {
           <Text style={styles.cardSubtitle}>Create a new parcel request</Text>
         </TouchableOpacity>
 
+        <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('PreferredDates')}>
+          <Text style={styles.cardTitle}>Guided Parcel Request</Text>
+          <Text style={styles.cardSubtitle}>Follow the complete parcel booking journey</Text>
+        </TouchableOpacity>
+
         <TouchableOpacity
           style={styles.card}
-          onPress={() => navigation.navigate('CreateTrip')}
+          onPress={() => navigation.navigate('StartEarning')}
         >
           <Text style={styles.cardTitle}>Earn While Travelling</Text>
           <Text style={styles.cardSubtitle}>Create a trip and earn money</Text>
@@ -53,6 +58,21 @@ const HomeScreen = ({ navigation }) => {
         >
           <Text style={styles.cardTitle}>Traveller Requests</Text>
           <Text style={styles.cardSubtitle}>View requests for your trips</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('ParcelTracking')}>
+          <Text style={styles.cardTitle}>Track a Parcel</Text>
+          <Text style={styles.cardSubtitle}>Follow a parcel through every delivery step</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('TodayTrip')}>
+          <Text style={styles.cardTitle}>Today's Trip</Text>
+          <Text style={styles.cardSubtitle}>Pick up parcels and complete your delivery</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('Profile')}>
+          <Text style={styles.cardTitle}>Profile & Verification</Text>
+          <Text style={styles.cardSubtitle}>Manage your account and documents</Text>
         </TouchableOpacity>
       </View>
     </View>

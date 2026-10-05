@@ -11,6 +11,7 @@ import ViewMatchingTripsScreen from '../screens/ViewMatchingTripsScreen';
 import MyDeliveriesScreen from '../screens/MyDeliveriesScreen';
 import TravellerRequestsScreen from '../screens/TravellerRequestsScreen';
 import DeliveryOtpScreen from '../screens/DeliveryOtpScreen';
+import DesignFlowScreen, { flowScreens } from '../screens/DesignFlowScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -38,6 +39,9 @@ const AppNavigator = () => {
             <Stack.Screen name="DeliveryOtp" component={DeliveryOtpScreen} options={{ title: 'Delivery OTP' }} />
           </>
         )}
+        {Object.keys(flowScreens).map((name) => (
+          <Stack.Screen key={name} name={name} component={DesignFlowScreen} options={{ title: flowScreens[name].title, headerShown: false }} />
+        ))}
       </Stack.Navigator>
     </NavigationContainer>
   );

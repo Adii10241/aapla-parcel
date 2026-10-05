@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Alert } from 'react-native';
 import { useAuth } from '../context/AuthContext';
 
-const LoginScreen = () => {
+const LoginScreen = ({ navigation }) => {
   const [phone, setPhone] = useState('');
   const [otp, setOtp] = useState('');
   const [name, setName] = useState('');
@@ -73,7 +73,12 @@ const LoginScreen = () => {
       )}
 
       {!showOtp ? (
-        <Button title="Send OTP" onPress={handleSendOtp} />
+        <>
+          <Button title="Send OTP" onPress={handleSendOtp} />
+          <View style={{ marginTop: 12 }}>
+            <Button title="Create an Acredo account" color="#1b3c35" onPress={() => navigation.navigate('AccountPhone')} />
+          </View>
+        </>
       ) : (
         <Button title="Verify OTP" onPress={handleVerifyOtp} />
       )}
